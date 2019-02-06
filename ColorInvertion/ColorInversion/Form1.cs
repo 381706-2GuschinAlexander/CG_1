@@ -49,10 +49,5 @@ namespace ColorInversion
                 bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
             }
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
