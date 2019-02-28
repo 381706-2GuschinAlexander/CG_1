@@ -23,11 +23,11 @@ namespace ColorInversion
       filename = _name;
     }
 
-    public void SetPic(Bitmap _bmp, string _name)
+    /*public void SetPic(Bitmap _bmp, string _name)
     {
       bmp = _bmp;
       filename = _name;
-    }
+    }*/
 
     public Bitmap GetPic()
     {
