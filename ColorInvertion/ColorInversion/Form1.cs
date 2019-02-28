@@ -8,46 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace ColorInversion
 {
-    public partial class Form1 : Form
+  public partial class Form1 : Form
+  {
+    GGC pic;
+    public Form1()
     {
-        Bitmap bmp;
-        string filename;
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                filename = openFileDialog1.FileName;
-                bmp = new Bitmap(filename);
-                pictureBox1.Image = bmp;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < bmp.Width; i++)
-                for (int j = 0; j < bmp.Height; j++)
-                {
-                    Color color = bmp.GetPixel(i, j);
-                    color = Color.FromArgb(255 - color.R, 255 - color.G, 255 - color.B);
-                    bmp.SetPixel(i, j, color);
-                }
-            pictureBox1.Image = bmp;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                filename = saveFileDialog1.FileName;
-                bmp.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
-            }
-        }
+      InitializeComponent();
     }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      if (openFileDialog1.ShowDialog() == DialogResult.OK)
+      {
+        pic = new GGC(new Bitmap(openFileDialog1.FileName), openFileDialog1.FileName);
+        pictureBox1.Image = pic.GetPic();
+      }
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Inversion();
+      pictureBox1.Image = pic.GetPic();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+      {
+        pic.GetPic().Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+      }
+    }
+  }
 }
