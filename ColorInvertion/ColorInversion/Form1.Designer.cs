@@ -39,6 +39,7 @@
       this.inversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.blackAndWhiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.averToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.lightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -112,7 +113,8 @@
       // blackAndWhiteToolStripMenuItem
       // 
       this.blackAndWhiteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.averToolStripMenuItem});
+            this.averToolStripMenuItem,
+            this.lightnessToolStripMenuItem});
       this.blackAndWhiteToolStripMenuItem.Name = "blackAndWhiteToolStripMenuItem";
       this.blackAndWhiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.blackAndWhiteToolStripMenuItem.Text = "Black and White";
@@ -123,6 +125,13 @@
       this.averToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.averToolStripMenuItem.Text = "Average";
       this.averToolStripMenuItem.Click += new System.EventHandler(this.averToolStripMenuItem_Click);
+      // 
+      // lightnessToolStripMenuItem
+      // 
+      this.lightnessToolStripMenuItem.Name = "lightnessToolStripMenuItem";
+      this.lightnessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.lightnessToolStripMenuItem.Text = "Lightness";
+      this.lightnessToolStripMenuItem.Click += new System.EventHandler(this.lightnessToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -158,6 +167,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem blackAndWhiteToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem averToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem lightnessToolStripMenuItem;
   }
 }
 

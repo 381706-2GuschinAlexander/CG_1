@@ -57,5 +57,14 @@ namespace ColorInversion
       pic.Average();
       pictureBox1.Image = pic.GetPic();
     }
+
+    private void lightnessToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Lightness();
+      pictureBox1.Image = pic.GetPic();
+    }
   }
 }

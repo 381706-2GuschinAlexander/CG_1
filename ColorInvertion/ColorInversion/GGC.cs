@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace ColorInversion
 {
-
+  
   class GGC
   {
   
@@ -53,6 +56,19 @@ namespace ColorInversion
           Color color = bmp.GetPixel(i, j);
           int aver = (color.R + color.G + color.B) / 3;
           color = Color.FromArgb(aver, aver, aver);
+          bmp.SetPixel(i, j, color);
+        }
+    }
+
+    public void Lightness()
+    {
+      for (int i = 0; i < bmp.Width; i++)
+        for (int j = 0; j < bmp.Height; j++)
+        {
+          Color color = bmp.GetPixel(i, j);
+          int res = (Math.Min(color.R, Math.Min(color.G ,color.B)) +
+            Math.Max(color.R, Math.Max(color.G, color.B))) / 2;
+          color = Color.FromArgb(res, res, res);
           bmp.SetPixel(i, j, color);
         }
     }
