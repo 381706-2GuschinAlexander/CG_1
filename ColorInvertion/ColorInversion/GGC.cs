@@ -45,8 +45,17 @@ namespace ColorInversion
         }
     }
 
-
-
+    public void Average()
+    {
+      for (int i = 0; i < bmp.Width; i++)
+        for (int j = 0; j < bmp.Height; j++)
+        {
+          Color color = bmp.GetPixel(i, j);
+          int aver = (color.R + color.G + color.B) / 3;
+          color = Color.FromArgb(aver, aver, aver);
+          bmp.SetPixel(i, j, color);
+        }
+    }
 
 
   }

@@ -20,7 +20,7 @@ namespace ColorInversion
       InitializeComponent();
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void loadToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (openFileDialog1.ShowDialog() == DialogResult.OK)
       {
@@ -29,16 +29,7 @@ namespace ColorInversion
       }
     }
 
-    private void button2_Click(object sender, EventArgs e)
-    {
-      if (pic == null)
-        throw new Exception("Expect any image");
-
-      pic.Inversion();
-      pictureBox1.Image = pic.GetPic();
-    }
-
-    private void button3_Click(object sender, EventArgs e)
+    private void saveToolStripMenuItem_Click(object sender, EventArgs e)
     {
       if (pic == null)
         throw new Exception("Expect any image");
@@ -47,6 +38,24 @@ namespace ColorInversion
       {
         pic.GetPic().Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
       }
+    }
+
+    private void inversionToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Inversion();
+      pictureBox1.Image = pic.GetPic();
+    }
+
+    private void averToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Average();
+      pictureBox1.Image = pic.GetPic();
     }
   }
 }
