@@ -66,5 +66,24 @@ namespace ColorInversion
       pic.Lightness();
       pictureBox1.Image = pic.GetPic();
     }
+
+    private void standartToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Blur();
+      pictureBox1.Image = pic.GetPic();
+    }
+
+    private void compareToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (openFileDialog1.ShowDialog() == DialogResult.OK)
+      {
+        if (pic.ComparePic(pic.GetPic(), new Bitmap(openFileDialog1.FileName)))
+          throw new Exception("Eq img");
+      }
+      
+    }
   }
 }

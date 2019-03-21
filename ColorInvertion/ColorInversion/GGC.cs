@@ -26,11 +26,24 @@ namespace ColorInversion
       filename = _name;
     }
 
-    /*public void SetPic(Bitmap _bmp, string _name)
+    public bool ComparePic(Bitmap fir, Bitmap sec)
     {
-      bmp = _bmp;
-      filename = _name;
-    }*/
+      if (fir.Height != sec.Height)
+        return false;
+      if (fir.Width != sec.Width)
+        return false;
+
+      for (int i = 0; i < bmp.Width; i++)
+        for (int j = 0; j < bmp.Height; j++)
+        {
+          Color colorF = fir.GetPixel(i, j);
+          Color colorS = sec.GetPixel(i, j);
+          if (colorF != colorS)
+            return false;
+        }
+
+      return true;
+    }
 
     public Bitmap GetPic()
     {
@@ -73,6 +86,20 @@ namespace ColorInversion
         }
     }
 
+    public void Blur()
+    {
+      float[,] kernel;
+      kernel = new float[3, 3];
+      for (int i = 0; i < kernel.GetLength(0); i++)
+        for (int j = 0; j < kernel.GetLength(0); j++)
+          kernel[i, j] = 1.0f / 9.0f;
+
+      MatrixFilter BlurStd = new MatrixFilter(kernel);
+
+      for (int i = 0; i < bmp.Width; i++)
+        for (int j = 0; j < bmp.Height; j++)
+          bmp.SetPixel(i, j, BlurStd.CalculateNewColor(bmp, i, j));
+    }
 
   }
 }
