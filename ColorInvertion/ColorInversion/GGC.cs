@@ -101,5 +101,23 @@ namespace ColorInversion
           bmp.SetPixel(i, j, BlurStd.CalculateNewColor(bmp, i, j));
     }
 
+
+    public void AdaptiveBin()
+    {
+      float[,] kernel;
+      kernel = new float[7, 7];
+      
+      MatrixFilter Adaptive = new MatrixFilter(kernel);
+
+      for (int i = 0; i < bmp.Width; i++)
+        for (int j = 0; j < bmp.Height; j++)
+        {
+          Color tmp = bmp.GetPixel(i,j);
+          if ((tmp.R + tmp.G + tmp.B) / 3 > Adaptive.CalculateNewTr(bmp, i, j))
+            bmp.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+          else
+            bmp.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+        }
+    }
   }
 }

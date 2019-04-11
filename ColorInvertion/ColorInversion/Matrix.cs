@@ -48,6 +48,44 @@ namespace ColorInversion
         Clamp((int)resB, 0, 255));
     }
 
+    public int CalculateNewTr(Bitmap sourceImg, int x, int y)
+    {
+      int rad = kernel.GetLength(0) / 2;
+
+      /* int min = 255, max = 0;
+
+       for (int l = -rad; l <= rad; l++)
+         for (int k = -rad; k <= rad; k++)
+         {
+           int idX = Clamp(x + k, 0, sourceImg.Width - 1);
+           int idY = Clamp(y + l, 0, sourceImg.Height - 1);
+           Color nCol = sourceImg.GetPixel(idX, idY);
+           if((nCol.R + nCol.B + nCol.G)/3 < min)
+             min = (nCol.R + nCol.B + nCol.G)/ 3;
+           if ((nCol.R + nCol.B + nCol.G) / 3 > max)
+             max = (nCol.R + nCol.B + nCol.G) / 3;
+         }
+
+       return (max + min) / 2 -15;*/
+
+
+      int sum = 0;
+      int iter = 0;
+      for (int l = -rad; l <= rad; l++)
+        for (int k = -rad; k <= rad; k++)
+        {
+          int idX = Clamp(x + k, 0, sourceImg.Width - 1);
+          int idY = Clamp(y + l, 0, sourceImg.Height - 1);
+          Color nCol = sourceImg.GetPixel(idX, idY);
+          sum += nCol.R;
+          sum += nCol.G;
+          sum += nCol.B;
+          iter++;
+        }
+
+      return sum / (3 * iter) - 10;
+    }
+
     private int Clamp(int val, int min, int max)
     {
       if (val < min)

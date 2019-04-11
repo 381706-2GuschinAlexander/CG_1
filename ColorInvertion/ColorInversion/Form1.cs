@@ -24,6 +24,7 @@ namespace ColorInversion
     {
       if (openFileDialog1.ShowDialog() == DialogResult.OK)
       {
+       
         pic = new GGC(new Bitmap(openFileDialog1.FileName), openFileDialog1.FileName);
         pictureBox1.Image = pic.GetPic();
       }
@@ -83,7 +84,15 @@ namespace ColorInversion
         if (pic.ComparePic(pic.GetPic(), new Bitmap(openFileDialog1.FileName)))
           throw new Exception("Eq img");
       }
-      
+    }
+
+    private void adaptiveToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.AdaptiveBin();
+      pictureBox1.Image = pic.GetPic();
     }
   }
 }
