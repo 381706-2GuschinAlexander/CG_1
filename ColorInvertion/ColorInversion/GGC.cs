@@ -105,7 +105,7 @@ namespace ColorInversion
     public void AdaptiveBin()
     {
       float[,] kernel;
-      kernel = new float[7, 7];
+      kernel = new float[5, 5];
       
       MatrixFilter Adaptive = new MatrixFilter(kernel);
 
@@ -119,5 +119,7 @@ namespace ColorInversion
             bmp.SetPixel(i, j, Color.FromArgb(0, 0, 0));
         }
     }
+
+   
   }
 }

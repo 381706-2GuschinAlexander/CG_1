@@ -52,7 +52,7 @@ namespace ColorInversion
     {
       int rad = kernel.GetLength(0) / 2;
 
-      /* int min = 255, max = 0;
+       int min = 255, max = 0;
 
        for (int l = -rad; l <= rad; l++)
          for (int k = -rad; k <= rad; k++)
@@ -66,10 +66,10 @@ namespace ColorInversion
              max = (nCol.R + nCol.B + nCol.G) / 3;
          }
 
-       return (max + min) / 2 -15;*/
+       return (max + min) / 2 - 20;
 
 
-      int sum = 0;
+      /*int sum = 0;
       int iter = 0;
       for (int l = -rad; l <= rad; l++)
         for (int k = -rad; k <= rad; k++)
@@ -83,7 +83,7 @@ namespace ColorInversion
           iter++;
         }
 
-      return sum / (3 * iter) - 10;
+      return sum / (3 * iter) - 10;*/
     }
 
     private int Clamp(int val, int min, int max)

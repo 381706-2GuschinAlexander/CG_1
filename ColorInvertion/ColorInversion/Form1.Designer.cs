@@ -159,7 +159,7 @@
       // standartToolStripMenuItem
       // 
       this.standartToolStripMenuItem.Name = "standartToolStripMenuItem";
-      this.standartToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+      this.standartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.standartToolStripMenuItem.Text = "Standart";
       this.standartToolStripMenuItem.Click += new System.EventHandler(this.standartToolStripMenuItem_Click);
       // 
@@ -174,7 +174,7 @@
       // adaptiveToolStripMenuItem
       // 
       this.adaptiveToolStripMenuItem.Name = "adaptiveToolStripMenuItem";
-      this.adaptiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.adaptiveToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
       this.adaptiveToolStripMenuItem.Text = "Adaptive";
       this.adaptiveToolStripMenuItem.Click += new System.EventHandler(this.adaptiveToolStripMenuItem_Click);
       // 
