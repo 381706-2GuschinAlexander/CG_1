@@ -46,6 +46,8 @@
       this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.adaptiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.thresholdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.edgeDetectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -114,7 +116,8 @@
             this.inversionToolStripMenuItem,
             this.blackAndWhiteToolStripMenuItem,
             this.blurToolStripMenuItem,
-            this.binarizationToolStripMenuItem});
+            this.binarizationToolStripMenuItem,
+            this.edgeDetectionToolStripMenuItem});
       this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
       this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
       this.filtersToolStripMenuItem.Text = "Filters";
@@ -187,6 +190,21 @@
       this.thresholdToolStripMenuItem.Text = "Threshold";
       this.thresholdToolStripMenuItem.Click += new System.EventHandler(this.thresholdToolStripMenuItem_Click);
       // 
+      // edgeDetectionToolStripMenuItem
+      // 
+      this.edgeDetectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sobelToolStripMenuItem});
+      this.edgeDetectionToolStripMenuItem.Name = "edgeDetectionToolStripMenuItem";
+      this.edgeDetectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.edgeDetectionToolStripMenuItem.Text = "Edge detection";
+      // 
+      // sobelToolStripMenuItem
+      // 
+      this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
+      this.sobelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.sobelToolStripMenuItem.Text = "Sobel";
+      this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +246,8 @@
     private System.Windows.Forms.ToolStripMenuItem binarizationToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem adaptiveToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem thresholdToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem edgeDetectionToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
   }
 }
 

@@ -103,5 +103,14 @@ namespace ColorInversion
       pic.Threshold();
       pictureBox1.Image = pic.GetPic();
     }
+
+    private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.();
+      pictureBox1.Image = pic.GetPic();
+    }
   }
 }
