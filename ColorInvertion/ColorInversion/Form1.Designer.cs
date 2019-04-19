@@ -45,6 +45,7 @@
       this.standartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.adaptiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.thresholdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
@@ -159,14 +160,15 @@
       // standartToolStripMenuItem
       // 
       this.standartToolStripMenuItem.Name = "standartToolStripMenuItem";
-      this.standartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.standartToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
       this.standartToolStripMenuItem.Text = "Standart";
       this.standartToolStripMenuItem.Click += new System.EventHandler(this.standartToolStripMenuItem_Click);
       // 
       // binarizationToolStripMenuItem
       // 
       this.binarizationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adaptiveToolStripMenuItem});
+            this.adaptiveToolStripMenuItem,
+            this.thresholdToolStripMenuItem});
       this.binarizationToolStripMenuItem.Name = "binarizationToolStripMenuItem";
       this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.binarizationToolStripMenuItem.Text = "Binarization";
@@ -174,9 +176,16 @@
       // adaptiveToolStripMenuItem
       // 
       this.adaptiveToolStripMenuItem.Name = "adaptiveToolStripMenuItem";
-      this.adaptiveToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+      this.adaptiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.adaptiveToolStripMenuItem.Text = "Adaptive";
       this.adaptiveToolStripMenuItem.Click += new System.EventHandler(this.adaptiveToolStripMenuItem_Click);
+      // 
+      // thresholdToolStripMenuItem
+      // 
+      this.thresholdToolStripMenuItem.Name = "thresholdToolStripMenuItem";
+      this.thresholdToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.thresholdToolStripMenuItem.Text = "Threshold";
+      this.thresholdToolStripMenuItem.Click += new System.EventHandler(this.thresholdToolStripMenuItem_Click);
       // 
       // Form1
       // 
@@ -218,6 +227,7 @@
     private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem binarizationToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem adaptiveToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem thresholdToolStripMenuItem;
   }
 }
 

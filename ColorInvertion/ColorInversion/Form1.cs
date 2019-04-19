@@ -94,5 +94,14 @@ namespace ColorInversion
       pic.AdaptiveBin();
       pictureBox1.Image = pic.GetPic();
     }
+
+    private void thresholdToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      if (pic == null)
+        throw new Exception("Expect any image");
+
+      pic.Threshold();
+      pictureBox1.Image = pic.GetPic();
+    }
   }
 }

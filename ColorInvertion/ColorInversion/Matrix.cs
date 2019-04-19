@@ -66,7 +66,7 @@ namespace ColorInversion
              max = (nCol.R + nCol.B + nCol.G) / 3;
          }
 
-       return (max + min) / 2 - 20;
+       return (max + min) / 2;
 
 
       /*int sum = 0;
